@@ -1,0 +1,16 @@
+C:\Users\gpann\source\repos\pppwngui\pppwngui\bin\Debug\net8.0-windows\pppwngui.exe
+C:\Users\gpann\source\repos\pppwngui\pppwngui\bin\Debug\net8.0-windows\pppwngui.deps.json
+C:\Users\gpann\source\repos\pppwngui\pppwngui\bin\Debug\net8.0-windows\pppwngui.runtimeconfig.json
+C:\Users\gpann\source\repos\pppwngui\pppwngui\bin\Debug\net8.0-windows\pppwngui.dll
+C:\Users\gpann\source\repos\pppwngui\pppwngui\bin\Debug\net8.0-windows\pppwngui.pdb
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.Form1.resources
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.csproj.GenerateResource.cache
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.AssemblyInfoInputs.cache
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.AssemblyInfo.cs
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.csproj.CoreCompileInputs.cache
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.dll
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\refint\pppwngui.dll
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.pdb
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.genruntimeconfig.cache
+C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\ref\pppwngui.dll
