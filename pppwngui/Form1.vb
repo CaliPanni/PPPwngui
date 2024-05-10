@@ -9,6 +9,9 @@ Public Class Form1
         For Each nic As NetworkInterface In NetworkInterface.GetAllNetworkInterfaces()
             ComboBox2.Items.Add(nic.Description)
         Next
+        ComboBox1.SelectedItem = My.Settings.firmware
+        ComboBox2.SelectedItem = My.Settings.ethernet
+        TextBox2.Text = My.Settings.stage2
         Dim iniziobat As String = "home.bat"
         Dim ProcessInfo As New ProcessStartInfo(iniziobat)
         ProcessInfo.CreateNoWindow = True
@@ -20,6 +23,11 @@ Public Class Form1
         process2.Start()
     End Sub
 
+    Private Sub Form1_FormClosed(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        My.Settings.firmware = ComboBox1.SelectedItem
+        My.Settings.ethernet = ComboBox2.SelectedItem
+        My.Settings.stage2 = TextBox2.Text
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim openFileDialog1 As New OpenFileDialog()
         If openFileDialog1.ShowDialog() = DialogResult.OK Then
@@ -51,7 +59,7 @@ Public Class Form1
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim selectedNicIndex As Integer = ComboBox2.SelectedIndex
         Dim selectedFwIndex As Integer = ComboBox1.SelectedIndex
-        If ComboBox1.SelectedItem = "" Or ComboBox2.SelectedItem = "" Or TextBox2.Text = "" Then
+        If ComboBox1.SelectedItem = "" Or ComboBox2.SelectedItem = "" Or TextBox2.Text = "Open/Drop Stage2 payload" Then
             MessageBox.Show("Please fill in all the boxes.")
         Else
             sendpayload()
@@ -77,5 +85,23 @@ Public Class Form1
         process.Start()
         process.BeginOutputReadLine()
         process.BeginErrorReadLine()
+    End Sub
+    Private Sub TextBox2_DragEnter(sender As Object, e As DragEventArgs) Handles TextBox2.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
+            For Each file In files
+                Dim extension As String = Path.GetExtension(file)
+                If extension = ".bin" OrElse extension = ".elf" Then
+                    e.Effect = DragDropEffects.Copy
+                    Exit Sub
+                End If
+            Next
+        End If
+        e.Effect = DragDropEffects.None
+    End Sub
+
+    Private Sub TextBox2_DragDrop(sender As Object, e As DragEventArgs) Handles TextBox2.DragDrop
+        Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
+        TextBox2.Text = files(0)
     End Sub
 End Class

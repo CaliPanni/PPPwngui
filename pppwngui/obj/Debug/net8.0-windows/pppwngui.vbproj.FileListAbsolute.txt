@@ -14,3 +14,4 @@ C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\refint\pp
 C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.pdb
 C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\pppwngui.genruntimeconfig.cache
 C:\Users\gpann\source\repos\pppwngui\pppwngui\obj\Debug\net8.0-windows\ref\pppwngui.dll
+C:\Users\gpann\source\repos\pppwngui\pppwngui\bin\Debug\net8.0-windows\pppwngui.dll.config
