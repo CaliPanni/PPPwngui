@@ -41,7 +41,7 @@ Partial Class Form1
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(225, 58)
+        Button1.Location = New Point(219, 24)
         Button1.Name = "Button1"
         Button1.Size = New Size(89, 29)
         Button1.TabIndex = 1
@@ -61,7 +61,7 @@ Partial Class Form1
         ' 
         ComboBox1.FormattingEnabled = True
         ComboBox1.Items.AddRange(New Object() {"1100", "1071", "1070", "1050", "1001", "1000", "960", "950", "904", "903", "900", "850"})
-        ComboBox1.Location = New Point(225, 26)
+        ComboBox1.Location = New Point(219, 60)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(89, 28)
         ComboBox1.TabIndex = 6
@@ -80,7 +80,7 @@ Partial Class Form1
         ' TextBox2
         ' 
         TextBox2.AllowDrop = True
-        TextBox2.Location = New Point(9, 60)
+        TextBox2.Location = New Point(9, 26)
         TextBox2.Name = "TextBox2"
         TextBox2.ReadOnly = True
         TextBox2.Size = New Size(206, 27)
@@ -104,7 +104,7 @@ Partial Class Form1
         Label5.Name = "Label5"
         Label5.Size = New Size(42, 20)
         Label5.TabIndex = 11
-        Label5.Text = "v. 1.5"
+        Label5.Text = "v. 2.0"
         ' 
         ' Label7
         ' 
@@ -117,10 +117,10 @@ Partial Class Form1
         ' 
         ' RichTextBox1
         ' 
-        RichTextBox1.Location = New Point(12, 170)
+        RichTextBox1.Location = New Point(16, 170)
         RichTextBox1.Name = "RichTextBox1"
         RichTextBox1.ReadOnly = True
-        RichTextBox1.Size = New Size(325, 185)
+        RichTextBox1.Size = New Size(321, 185)
         RichTextBox1.TabIndex = 14
         RichTextBox1.Text = ""
         ' 
@@ -133,7 +133,7 @@ Partial Class Form1
         ' ComboBox2
         ' 
         ComboBox2.FormattingEnabled = True
-        ComboBox2.Location = New Point(9, 26)
+        ComboBox2.Location = New Point(9, 60)
         ComboBox2.Name = "ComboBox2"
         ComboBox2.Size = New Size(206, 28)
         ComboBox2.TabIndex = 15
@@ -180,7 +180,7 @@ Partial Class Form1
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
         Name = "Form1"
-        Text = "PPPwn GUI ver. 1.5"
+        Text = "PPPwn GUI ver. 2.0"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         ResumeLayout(False)

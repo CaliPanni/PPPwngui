@@ -3,6 +3,14 @@ Imports System.Net.NetworkInformation
 Imports System.Net.Security
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
+
+
+' PPPwn Gui Coded by CaliPanni
+' https://github.com/CaliPanni/PPPwngui/
+' Build 125 ver. 2.0
+' 11/05/2024 15:47
+
+
 Public Class Form1
     Private WithEvents process As Process
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -59,13 +67,36 @@ Public Class Form1
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim selectedNicIndex As Integer = ComboBox2.SelectedIndex
         Dim selectedFwIndex As Integer = ComboBox1.SelectedIndex
-        If ComboBox1.SelectedItem = "" Or ComboBox2.SelectedItem = "" Or TextBox2.Text = "Open/Drop Stage2 payload" Then
+        If ComboBox1.SelectedItem = "" Or ComboBox2.SelectedItem = "" Then
             MessageBox.Show("Please fill in all the boxes.")
         Else
-            sendpayload()
+            If TextBox2.Text = "Open/Drop Stage2 payload" Then
+                TextBox2.Text = "goldhen\1100\stage2.bin"
+                sendpayload()
+            Else
+                sendpayload()
+            End If
         End If
     End Sub
     Private Sub sendpayload()
+        If TextBox2.Text = "goldhen\1100\stage2.bin" Or TextBox2.Text = "goldhen\900\stage2.bin" Then
+            If ComboBox1.SelectedItem = "900" Then
+                TextBox2.Text = "goldhen\900\stage2.bin"
+                sendpayload1()
+            Else
+                If ComboBox1.SelectedItem = "1100" Then
+                    TextBox2.Text = "goldhen\1100\stage2.bin"
+                    sendpayload1()
+                Else
+                    MessageBox.Show("This firmware does not support GoldHEN.")
+                End If
+            End If
+        Else
+            sendpayload1()
+        End If
+
+    End Sub
+    Private Sub sendpayload1()
         Using writer As New StreamWriter("var1.temp") 'Fw
             writer.Write(ComboBox1.SelectedItem)
         End Using
@@ -105,3 +136,4 @@ Public Class Form1
         TextBox2.Text = files(0)
     End Sub
 End Class
+
