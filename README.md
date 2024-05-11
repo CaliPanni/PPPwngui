@@ -22,4 +22,4 @@ todo:
 - Add a setup.
 - Add a packed one.
 - Add golden stage2 as default.
-
+- Add a video tutorial.
