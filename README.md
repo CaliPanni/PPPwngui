@@ -18,5 +18,8 @@ Pppwn gui is a simple gui of the script written by TheFlow for the ps4 Jailbreak
 - View output directly on the gui
 - Save settins
 
-
+todo:
+- Add a setup.
+- Add a packed one.
+- Add golden stage2 as default.
 
