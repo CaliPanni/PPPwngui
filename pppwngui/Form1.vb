@@ -7,8 +7,8 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 ' PPPwn Gui Coded by CaliPanni
 ' https://github.com/CaliPanni/PPPwngui/
-' Build 125 ver. 2.0
-' 11/05/2024 15:47
+' Build 125 ver. 2.0b
+' 11/05/2024 18:26
 
 
 Public Class Form1
@@ -17,9 +17,12 @@ Public Class Form1
         For Each nic As NetworkInterface In NetworkInterface.GetAllNetworkInterfaces()
             ComboBox2.Items.Add(nic.Description)
         Next
-        ComboBox1.SelectedItem = My.Settings.firmware
-        ComboBox2.SelectedItem = My.Settings.ethernet
-        TextBox2.Text = My.Settings.stage2
+        CheckBox1.Checked = My.Settings.saves
+        If CheckBox1.Checked = True Then
+            ComboBox1.SelectedItem = My.Settings.firmware
+            ComboBox2.SelectedItem = My.Settings.ethernet
+            TextBox2.Text = My.Settings.stage2
+        End If
         Dim iniziobat As String = "home.bat"
         Dim ProcessInfo As New ProcessStartInfo(iniziobat)
         ProcessInfo.CreateNoWindow = True
@@ -35,6 +38,7 @@ Public Class Form1
         My.Settings.firmware = ComboBox1.SelectedItem
         My.Settings.ethernet = ComboBox2.SelectedItem
         My.Settings.stage2 = TextBox2.Text
+        My.Settings.saves = CheckBox1.Checked
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim openFileDialog1 As New OpenFileDialog()

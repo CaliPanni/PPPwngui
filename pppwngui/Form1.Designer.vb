@@ -36,6 +36,7 @@ Partial Class Form1
         ComboBox2 = New ComboBox()
         LinkLabel1 = New LinkLabel()
         GroupBox1 = New GroupBox()
+        CheckBox1 = New CheckBox()
         GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -90,9 +91,9 @@ Partial Class Form1
         ' Button3
         ' 
         Button3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button3.Location = New Point(12, 361)
+        Button3.Location = New Point(16, 388)
         Button3.Name = "Button3"
-        Button3.Size = New Size(325, 27)
+        Button3.Size = New Size(321, 27)
         Button3.TabIndex = 10
         Button3.Text = "Send Payload"
         Button3.UseVisualStyleBackColor = True
@@ -102,14 +103,14 @@ Partial Class Form1
         Label5.AutoSize = True
         Label5.Location = New Point(235, 25)
         Label5.Name = "Label5"
-        Label5.Size = New Size(42, 20)
+        Label5.Size = New Size(51, 20)
         Label5.TabIndex = 11
-        Label5.Text = "v. 2.0"
+        Label5.Text = "v. 2.0b"
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(12, 147)
+        Label7.Location = New Point(12, 174)
         Label7.Name = "Label7"
         Label7.Size = New Size(39, 20)
         Label7.TabIndex = 13
@@ -117,7 +118,7 @@ Partial Class Form1
         ' 
         ' RichTextBox1
         ' 
-        RichTextBox1.Location = New Point(16, 170)
+        RichTextBox1.Location = New Point(16, 197)
         RichTextBox1.Name = "RichTextBox1"
         RichTextBox1.ReadOnly = True
         RichTextBox1.Size = New Size(321, 185)
@@ -143,7 +144,7 @@ Partial Class Form1
         ' 
         LinkLabel1.AutoSize = True
         LinkLabel1.Font = New Font("Segoe UI Semilight", 7.8F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        LinkLabel1.Location = New Point(12, 391)
+        LinkLabel1.Location = New Point(16, 418)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(235, 17)
         LinkLabel1.TabIndex = 17
@@ -156,18 +157,31 @@ Partial Class Form1
         GroupBox1.Controls.Add(ComboBox2)
         GroupBox1.Controls.Add(ComboBox1)
         GroupBox1.Controls.Add(Button1)
+        GroupBox1.Controls.Add(CheckBox1)
         GroupBox1.Location = New Point(16, 48)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(321, 96)
+        GroupBox1.Size = New Size(321, 123)
         GroupBox1.TabIndex = 18
         GroupBox1.TabStop = False
         GroupBox1.Text = "Options"
+        ' 
+        ' CheckBox1
+        ' 
+        CheckBox1.AutoSize = True
+        CheckBox1.Checked = True
+        CheckBox1.CheckState = CheckState.Checked
+        CheckBox1.Location = New Point(9, 90)
+        CheckBox1.Name = "CheckBox1"
+        CheckBox1.Size = New Size(118, 24)
+        CheckBox1.TabIndex = 19
+        CheckBox1.Text = "Save Options"
+        CheckBox1.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(349, 410)
+        ClientSize = New Size(349, 444)
         Controls.Add(LinkLabel1)
         Controls.Add(RichTextBox1)
         Controls.Add(Label7)
@@ -180,7 +194,7 @@ Partial Class Form1
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
         Name = "Form1"
-        Text = "PPPwn GUI ver. 2.0"
+        Text = "PPPwn GUI ver. 2.0b"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         ResumeLayout(False)
@@ -206,4 +220,5 @@ Partial Class Form1
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
