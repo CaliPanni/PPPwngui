@@ -1,6 +1,6 @@
 @echo off
-echo Python Version:
-python -V
+echo PPPwn GUI v. 2.5 Based on PPPwn c++
+echo.
 echo Npcap Install Dir:
 set KEY_NAME=HKLM\Software\WOW6432Node\Npcap
 for /F "usebackq tokens=1,2*" %%A IN (`reg query "%KEY_NAME%" /ve 2^>nul ^| find "REG_SZ"`) do (

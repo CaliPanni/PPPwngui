@@ -7,11 +7,12 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 ' PPPwn Gui Coded by CaliPanni
 ' https://github.com/CaliPanni/PPPwngui/
-' Build 125 ver. 2.0b
-' 11/05/2024 18:26
+' Build 180 ver. 2.5 based on PPPwn c++
+' 15/05/2024 21:10
 
 
 Public Class Form1
+    Private lan As String
     Private WithEvents process As Process
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For Each nic As NetworkInterface In NetworkInterface.GetAllNetworkInterfaces()
@@ -22,6 +23,7 @@ Public Class Form1
             ComboBox1.SelectedItem = My.Settings.firmware
             ComboBox2.SelectedItem = My.Settings.ethernet
             TextBox2.Text = My.Settings.stage2
+            CheckBox2.Checked = My.Settings.autoretry
         End If
         Dim iniziobat As String = "home.bat"
         Dim ProcessInfo As New ProcessStartInfo(iniziobat)
@@ -35,10 +37,15 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Dim pproc() As Process = Process.GetProcessesByName("pppwn.exe")
+        For Each proc As Process In pproc
+            proc.Kill()
+        Next
         My.Settings.firmware = ComboBox1.SelectedItem
         My.Settings.ethernet = ComboBox2.SelectedItem
         My.Settings.stage2 = TextBox2.Text
         My.Settings.saves = CheckBox1.Checked
+        My.Settings.autoretry = CheckBox2.Checked
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim openFileDialog1 As New OpenFileDialog()
@@ -74,6 +81,9 @@ Public Class Form1
         If ComboBox1.SelectedItem = "" Or ComboBox2.SelectedItem = "" Then
             MessageBox.Show("Please fill in all the boxes.")
         Else
+            Dim selectedNic As NetworkInterface = NetworkInterface.GetAllNetworkInterfaces()(selectedNicIndex)
+            Dim interfaceid As String = selectedNic.Id
+            lan = "\Device\NPF_" + selectedNic.Id
             If TextBox2.Text = "Open/Drop Stage2 payload" Then
                 TextBox2.Text = "goldhen\1100\stage2.bin"
                 sendpayload()
@@ -105,10 +115,13 @@ Public Class Form1
             writer.Write(ComboBox1.SelectedItem)
         End Using
         Using writer As New StreamWriter("var2.temp") 'LAN interface
-            writer.Write(ComboBox2.SelectedItem)
+            writer.Write(lan)
         End Using
         Using writer As New StreamWriter("var3.temp") 'stage2 dir
             writer.Write(TextBox2.Text)
+        End Using
+        Using writer As New StreamWriter("var4.temp") 'auto retry
+            writer.Write(CheckBox2.Checked)
         End Using
         RichTextBox1.Text = ""
         process = New Process()

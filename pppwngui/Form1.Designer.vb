@@ -36,6 +36,7 @@ Partial Class Form1
         ComboBox2 = New ComboBox()
         LinkLabel1 = New LinkLabel()
         GroupBox1 = New GroupBox()
+        CheckBox2 = New CheckBox()
         CheckBox1 = New CheckBox()
         GroupBox1.SuspendLayout()
         SuspendLayout()
@@ -103,9 +104,9 @@ Partial Class Form1
         Label5.AutoSize = True
         Label5.Location = New Point(235, 25)
         Label5.Name = "Label5"
-        Label5.Size = New Size(51, 20)
+        Label5.Size = New Size(42, 20)
         Label5.TabIndex = 11
-        Label5.Text = "v. 2.0b"
+        Label5.Text = "v. 2.5"
         ' 
         ' Label7
         ' 
@@ -153,6 +154,7 @@ Partial Class Form1
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(CheckBox2)
         GroupBox1.Controls.Add(TextBox2)
         GroupBox1.Controls.Add(ComboBox2)
         GroupBox1.Controls.Add(ComboBox1)
@@ -165,12 +167,22 @@ Partial Class Form1
         GroupBox1.TabStop = False
         GroupBox1.Text = "Options"
         ' 
+        ' CheckBox2
+        ' 
+        CheckBox2.AutoSize = True
+        CheckBox2.Location = New Point(9, 93)
+        CheckBox2.Name = "CheckBox2"
+        CheckBox2.Size = New Size(101, 24)
+        CheckBox2.TabIndex = 20
+        CheckBox2.Text = "Auto Retry"
+        CheckBox2.UseVisualStyleBackColor = True
+        ' 
         ' CheckBox1
         ' 
         CheckBox1.AutoSize = True
         CheckBox1.Checked = True
         CheckBox1.CheckState = CheckState.Checked
-        CheckBox1.Location = New Point(9, 90)
+        CheckBox1.Location = New Point(190, 93)
         CheckBox1.Name = "CheckBox1"
         CheckBox1.Size = New Size(118, 24)
         CheckBox1.TabIndex = 19
@@ -194,7 +206,7 @@ Partial Class Form1
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
         Name = "Form1"
-        Text = "PPPwn GUI ver. 2.0b"
+        Text = "PPPwn GUI ver. 2.5"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         ResumeLayout(False)
@@ -221,4 +233,5 @@ Partial Class Form1
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
 End Class

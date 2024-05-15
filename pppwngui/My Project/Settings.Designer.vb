@@ -101,6 +101,18 @@ Namespace My
                 Me("saves") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property autoretry() As Boolean
+            Get
+                Return CType(Me("autoretry"),Boolean)
+            End Get
+            Set
+                Me("autoretry") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
