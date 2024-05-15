@@ -8,7 +8,7 @@
 Pppwn gui is a simple gui of the script written by TheFlow for the ps4 Jailbreak. This program is written enteriely in vb.net, with a little part of C# and batch.
 ## ⚠️WARNING⚠️
 ### to use this gui you must have [Npcap](https://npcap.com/dist/npcap-1.79.exe) installed.
-![PPPwn gui 2.5]([https://i.ibb.co/Kbj10YS/Screenshot-2024-05-10-182459.png]))
+![PPPwn gui 2.5](https://i.ibb.co/Kbj10YS/Screenshot-2024-05-10-182459.png)
 
 ## Features
 - PPPwn c++ based
