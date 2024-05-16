@@ -1,5 +1,5 @@
 @echo off
-echo PPPwn GUI v. 2.5 Based on PPPwn c++
+echo PPPwn GUI v. 2.7 Based on PPPwn C++
 echo.
 echo Npcap Install Dir:
 set KEY_NAME=HKLM\Software\WOW6432Node\Npcap
@@ -26,4 +26,5 @@ goto ABORT
 :ABORT
 echo %NPCAP_DIR%
 echo.
-echo Ready! 
+echo Ready!
+exit

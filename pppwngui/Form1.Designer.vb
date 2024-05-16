@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Button1 = New Button()
         Label1 = New Label()
@@ -38,17 +39,19 @@ Partial Class Form1
         GroupBox1 = New GroupBox()
         CheckBox2 = New CheckBox()
         CheckBox1 = New CheckBox()
+        Timer1 = New Timer(components)
         GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Button1
         ' 
+        Button1.BackColor = Color.Black
         Button1.Location = New Point(219, 24)
         Button1.Name = "Button1"
         Button1.Size = New Size(89, 29)
         Button1.TabIndex = 1
         Button1.Text = "Open"
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Label1
         ' 
@@ -61,6 +64,8 @@ Partial Class Form1
         ' 
         ' ComboBox1
         ' 
+        ComboBox1.BackColor = Color.Black
+        ComboBox1.ForeColor = Color.White
         ComboBox1.FormattingEnabled = True
         ComboBox1.Items.AddRange(New Object() {"1100", "1071", "1070", "1050", "1001", "1000", "960", "950", "904", "903", "900", "850"})
         ComboBox1.Location = New Point(219, 60)
@@ -73,7 +78,8 @@ Partial Class Form1
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(12, 4)
+        Label4.ForeColor = Color.White
+        Label4.Location = New Point(46, 4)
         Label4.Name = "Label4"
         Label4.Size = New Size(236, 46)
         Label4.TabIndex = 7
@@ -82,6 +88,8 @@ Partial Class Form1
         ' TextBox2
         ' 
         TextBox2.AllowDrop = True
+        TextBox2.BackColor = Color.Black
+        TextBox2.ForeColor = Color.White
         TextBox2.Location = New Point(9, 26)
         TextBox2.Name = "TextBox2"
         TextBox2.ReadOnly = True
@@ -91,26 +99,31 @@ Partial Class Form1
         ' 
         ' Button3
         ' 
+        Button3.BackColor = Color.Black
         Button3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button3.Location = New Point(16, 388)
+        Button3.ForeColor = Color.White
+        Button3.Location = New Point(12, 419)
         Button3.Name = "Button3"
-        Button3.Size = New Size(321, 27)
+        Button3.Size = New Size(321, 37)
         Button3.TabIndex = 10
         Button3.Text = "Send Payload"
-        Button3.UseVisualStyleBackColor = True
+        Button3.UseVisualStyleBackColor = False
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(235, 25)
+        Label5.ForeColor = Color.White
+        Label5.Location = New Point(269, 25)
         Label5.Name = "Label5"
         Label5.Size = New Size(42, 20)
         Label5.TabIndex = 11
-        Label5.Text = "v. 2.5"
+        Label5.Text = "v. 2.7"
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
+        Label7.BackColor = Color.Transparent
+        Label7.ForeColor = Color.White
         Label7.Location = New Point(12, 174)
         Label7.Name = "Label7"
         Label7.Size = New Size(39, 20)
@@ -119,21 +132,25 @@ Partial Class Form1
         ' 
         ' RichTextBox1
         ' 
-        RichTextBox1.Location = New Point(16, 197)
+        RichTextBox1.BackColor = Color.Black
+        RichTextBox1.ForeColor = Color.Green
+        RichTextBox1.Location = New Point(12, 197)
         RichTextBox1.Name = "RichTextBox1"
         RichTextBox1.ReadOnly = True
-        RichTextBox1.Size = New Size(321, 185)
+        RichTextBox1.Size = New Size(320, 210)
         RichTextBox1.TabIndex = 14
         RichTextBox1.Text = ""
         ' 
         ' OpenFileDialog1
         ' 
         OpenFileDialog1.FileName = "OpenFileDialog1"
-        OpenFileDialog1.Filter = "BIN FILE|*.bin|ELF FILE|*.elf"
+        OpenFileDialog1.Filter = "Payload|*.bin *.elf"
         OpenFileDialog1.Title = "Select Stage 2 payload."
         ' 
         ' ComboBox2
         ' 
+        ComboBox2.BackColor = Color.Black
+        ComboBox2.ForeColor = Color.White
         ComboBox2.FormattingEnabled = True
         ComboBox2.Location = New Point(9, 60)
         ComboBox2.Name = "ComboBox2"
@@ -145,7 +162,8 @@ Partial Class Form1
         ' 
         LinkLabel1.AutoSize = True
         LinkLabel1.Font = New Font("Segoe UI Semilight", 7.8F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        LinkLabel1.Location = New Point(16, 418)
+        LinkLabel1.LinkColor = Color.Cyan
+        LinkLabel1.Location = New Point(12, 459)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(235, 17)
         LinkLabel1.TabIndex = 17
@@ -154,13 +172,15 @@ Partial Class Form1
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.BackColor = Color.Black
         GroupBox1.Controls.Add(CheckBox2)
         GroupBox1.Controls.Add(TextBox2)
         GroupBox1.Controls.Add(ComboBox2)
         GroupBox1.Controls.Add(ComboBox1)
         GroupBox1.Controls.Add(Button1)
         GroupBox1.Controls.Add(CheckBox1)
-        GroupBox1.Location = New Point(16, 48)
+        GroupBox1.ForeColor = Color.White
+        GroupBox1.Location = New Point(12, 48)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(321, 123)
         GroupBox1.TabIndex = 18
@@ -189,24 +209,28 @@ Partial Class Form1
         CheckBox1.Text = "Save Options"
         CheckBox1.UseVisualStyleBackColor = True
         ' 
+        ' Timer1
+        ' 
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(349, 444)
-        Controls.Add(LinkLabel1)
-        Controls.Add(RichTextBox1)
+        BackColor = Color.Black
+        ClientSize = New Size(346, 481)
         Controls.Add(Label7)
-        Controls.Add(Label5)
+        Controls.Add(RichTextBox1)
+        Controls.Add(GroupBox1)
         Controls.Add(Button3)
+        Controls.Add(LinkLabel1)
+        Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label1)
-        Controls.Add(GroupBox1)
         FormBorderStyle = FormBorderStyle.Fixed3D
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
         Name = "Form1"
-        Text = "PPPwn GUI ver. 2.5"
+        Text = "PPPwn GUI ver. 2.7"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         ResumeLayout(False)
@@ -234,4 +258,5 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents Timer1 As Timer
 End Class

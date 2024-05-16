@@ -7,14 +7,20 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 ' PPPwn Gui Coded by CaliPanni
 ' https://github.com/CaliPanni/PPPwngui/
-' Build 180 ver. 2.5 based on PPPwn c++
-' 15/05/2024 21:10
+' Build 250 ver. 2.7 based on PPPwn C++
+' 16/05/2024 19:43
 
 
 Public Class Form1
+    Private times As String
     Private lan As String
     Private WithEvents process As Process
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LinkLabel1.Left = Me.ClientSize.Width
+        Timer1.Interval = 100
+        times = 2
+        Timer1.Start()
+
         For Each nic As NetworkInterface In NetworkInterface.GetAllNetworkInterfaces()
             ComboBox2.Items.Add(nic.Description)
         Next
@@ -151,6 +157,19 @@ Public Class Form1
     Private Sub TextBox2_DragDrop(sender As Object, e As DragEventArgs) Handles TextBox2.DragDrop
         Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
         TextBox2.Text = files(0)
+    End Sub
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        LinkLabel1.Left -= 5
+        If LinkLabel1.Right < 0 Then
+            If times = 1 Then
+                LinkLabel1.Text = "Made In Italy By Peppe Meow (CaliPanni)"
+                times = 2
+            Else
+                LinkLabel1.Text = "https://github.com/CaliPanni/PPPwngui"
+                times = 1
+            End If
+            LinkLabel1.Left = Me.ClientSize.Width
+        End If
     End Sub
 End Class
 
